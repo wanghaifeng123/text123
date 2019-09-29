@@ -1,0 +1,226 @@
+{
+	"info": {
+		"_postman_id": "33b383f3-7536-4a52-93c2-b3f5d1243234",
+		"name": "Day04",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "登录",
+			"item": [
+				{
+					"name": "成功登录",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "e8b31165-6b35-4877-991b-e990205241c4",
+								"exec": [
+									"var token = pm.response.json().data",
+									"",
+									"pm.globals.set(\"lol\",\"Bearer \" + token);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"mobile\":\"13800000002\", \n\"password\":\"123456\"}\n"
+						},
+						"url": {
+							"raw": "http://182.92.81.159/api/sys/login",
+							"protocol": "http",
+							"host": [
+								"182",
+								"92",
+								"81",
+								"159"
+							],
+							"path": [
+								"api",
+								"sys",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "用户名错误",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"mobile\":\"13800000666\", \r\n\"password\":\"123456\"}"
+						},
+						"url": {
+							"raw": "http://182.92.81.159/api/sys/login",
+							"protocol": "http",
+							"host": [
+								"182",
+								"92",
+								"81",
+								"159"
+							],
+							"path": [
+								"api",
+								"sys",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "用户名为空",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"mobile\":\"\", \r\n\"password\":\"123456\"}"
+						},
+						"url": {
+							"raw": "http://182.92.81.159/api/sys/login",
+							"protocol": "http",
+							"host": [
+								"182",
+								"92",
+								"81",
+								"159"
+							],
+							"path": [
+								"api",
+								"sys",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "密码为空",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"mobile\":\"13800000002\", \r\n\"password\":\"\"}"
+						},
+						"url": {
+							"raw": "http://182.92.81.159/api/sys/login",
+							"protocol": "http",
+							"host": [
+								"182",
+								"92",
+								"81",
+								"159"
+							],
+							"path": [
+								"api",
+								"sys",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "密码错误",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"mobile\":\"13800000002\", \r\n\"password\":\"error\"}"
+						},
+						"url": {
+							"raw": "http://182.92.81.159/api/sys/login",
+							"protocol": "http",
+							"host": [
+								"182",
+								"92",
+								"81",
+								"159"
+							],
+							"path": [
+								"api",
+								"sys",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "请求参数为空",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://182.92.81.159/api/sys/login",
+							"protocol": "http",
+							"host": [
+								"182",
+								"92",
+								"81",
+								"159"
+							],
+							"path": [
+								"api",
+								"sys",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
